@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine</title>
+    <link rel="stylesheet" type="text/css" href="Be My Valentine.css">
+  </head>
+  <body>
+    <div id="valentineQuestion"><b>Will you be my valentine? PLEASEEEEEEEEEE</b></div>
+    <button class="answerButton" onclick="location.href='Thank you.html'">
+      Yes
+    </button>
+    <button class="answerButton" id="noButton" onclick="changeButtonText()">nuh uh</button> <!-- Added onclick handler to call the function -->
+    <br />
+    <img src="please.gif" alt="cat asking question" class="responsive" />
+
+    <script>
+      // Array of sentences or words for the button
+      const phrases = ["Nuh Uh", "No Way", "NOOO", "MAGAGALIT AKO", "IIYAK AQ", "PLEASE CLICK YES T3T "];
+      let currentIndex = 0;
+
+      function changeButtonText() {
+          // Change the button text to the next phrase in the array
+          currentIndex = (currentIndex + 1) % phrases.length; // Loop back to the first phrase when we reach the end
+
+          // Changed the ID here to match the actual button's ID in the HTML
+          const noButton = document.getElementById("noButton");  // Corrected id from 'nuhUh' to 'noButton'
+          
+          // Update the button's text content with the new phrase
+          noButton.textContent = phrases[currentIndex];
+      }
+    </script>
+  </body>
+</html>
